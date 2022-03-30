@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
   text-align: center;
 }
@@ -35,4 +39,50 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.jb-ic-dc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn {
+  @apply rounded-xl h-11 justify-between items-center p-2 w-97;
+}
+
+.btn.primary {
+  @apply w-full md:w-97 relative overflow-hidden md:mb-0 mb-4;
+  transition: .3s;
+  border-bottom: 3px solid #ffffff25;
+  background-color: rgb(45 143 255);
+  box-shadow: 0 5px 0 rgb(0 89 190), 0 8px 5px #22222244;
+  color: #f8f8f8;
+  top: -3px;
+}
+.btn.primary:hover {
+  background-color: rgb(15, 127, 255);
+}
+.btn.primary:active {
+  top: 1px;
+  box-shadow: none !important;
+}
+
+.btn.secondary {
+  @apply w-5.5/12 md:w-28 border-neutral-300 border transition-colors;
+}
+.btn.secondary:hover {
+  @apply bg-neutral-200
+}
+.btn.secondary:active {
+  @apply bg-neutral-300
+}
+.color-box {
+  @apply inline w-full sm:w-1/4 h-1/4 sm:h-full;
+}
+
+svg {
+  display: inline !important;
+  margin-right: 6px;
 }

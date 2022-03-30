@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React, { createContext, useState } from 'react';
+import Btns from './components/btns';
+import ColorPalette from './components/color-palette'
+import CopiedMessage from './components/copied-message';
 import './App.css';
+import './styles/tailwind.css';
 
-function App() {
+const PaletteContext = createContext();
+
+const App = () => {
+  const colorPaletteRef = React.createRef();
+  const copiedMessageRef = React.createRef();
+  const [colors, setColors] = useState([
+    'rgb(148 163 184)',
+    'rgb(71 85 105)',
+    'rgb(17 24 39)',
+    'rgb(220 38 38)',
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PaletteContext.Provider value={{ setColors, colors, colorPaletteRef, copiedMessageRef }}>
+      <CopiedMessage />
+      <ColorPalette />
+      <Btns />
+    </PaletteContext.Provider>
   );
 }
 
 export default App;
+export { PaletteContext }

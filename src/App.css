@@ -64,9 +64,9 @@
 .btn.primary:hover {
   background-color: rgb(15, 127, 255);
 }
-.btn.primary:active {
-  top: 1px;
+.btn-primary-active {
   box-shadow: none !important;
+  top: 1px !important;
 }
 
 .btn.secondary {
@@ -79,10 +79,16 @@
   @apply bg-neutral-300
 }
 .color-box {
-  @apply inline w-full sm:w-1/4 h-1/4 sm:h-full;
+  @apply w-full sm:w-1/4 h-1/4 sm:h-full items-center sm:items-end sm:justify-center justify-start flex p-10 relative;
 }
-
+.color-box:hover .hover-box {
+  @apply opacity-100;
+}
+.hover-box > * {
+  transition: .3s;
+  @apply absolute text-white;
+}
 svg {
-  display: inline !important;
+  display: inline;
   margin-right: 6px;
 }

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { PaletteContext } from '../App';
+import Color from './color'
 
 const ColorPalette = props => {
     const { colors, colorPaletteRef } = useContext(PaletteContext);
@@ -9,17 +10,9 @@ const ColorPalette = props => {
             <div
                 style={{ height: '24rem' }}
                 ref={colorPaletteRef}
-                className="w-full h-full flex-col sm:flex-row flex"
+                className="w-full h-full flex-col sm:flex-row overflow-hidden flex"
             >
-                {colors.map((value, index) => {
-                    return (
-                        <span
-                            key={`color-${index}`}
-                            className="color-box"
-                            style={{ backgroundColor: value }}
-                        ></span>
-                    )
-                })}
+                { colors.map(value => <Color key={value} value={value} />)}
             </div>
         </div>
     );

@@ -11,10 +11,10 @@ const App = () => {
   const colorPaletteRef = React.createRef();
   const copiedMessageRef = React.createRef();
   const [colors, setColors] = useState([
-    'rgb(148 163 184)',
-    'rgb(71 85 105)',
-    'rgb(17 24 39)',
-    'rgb(220 38 38)',
+    '#94a3b8',
+    '#475569',
+    '#111827',
+    '#dc2626',
   ]);
 
   return (
